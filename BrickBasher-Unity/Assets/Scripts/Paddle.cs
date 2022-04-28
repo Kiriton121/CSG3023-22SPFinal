@@ -2,7 +2,7 @@
  * Created by: Bob Baloney
  * Date Created: April 20, 2022
  * 
- * Last Edited by: 
+ * Last Edited by: Zhiyong Lu
  * Last Edited:
  * 
  * Description: Paddle controler on Horizontal Axis
@@ -23,5 +23,15 @@ public class Paddle : MonoBehaviour
     void Update()
     {
 
-    }//end Update()
+            speed = Input.GetAxis("Horizontal"); // horizontal movement
+            if (speed != 0)
+            {
+                Vector3 pos = transform.position;
+                pos.x += speed * Time.deltaTime * speed;
+                transform.position = pos;
+
+            }
+
+
+        }//end Update()
 }
